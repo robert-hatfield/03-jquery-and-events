@@ -13,9 +13,9 @@ Article.prototype.toHtml = function() {
   var $newArticle = $('article.template').clone().removeClass('template');
 
   $newArticle.attr('data-category', this.category);
-  // TODO: Use jQuery to also add the author name as a data-attribute of the newly cloned article.
+  // DONE: Use jQuery to also add the author name as a data-attribute of the newly cloned article.
   //       Doing so will allow us to use selectors to target articles, based on who wrote them.
-
+  $newArticle.attr('data-author', this.author);
   $newArticle.find('.byline a').text(this.author);
   $newArticle.find('.byline a').attr('href', this.authorUrl);
   $newArticle.find('h1:first').text(this.title);
@@ -26,6 +26,8 @@ Article.prototype.toHtml = function() {
   return $newArticle;
 };
 
+// REMOVE: Remove this before turning in. sourceData will be on the global scope
+/* eslint-disable */
 sourceData.sort(function(a,b) {
   return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
 });
@@ -33,6 +35,8 @@ sourceData.sort(function(a,b) {
 sourceData.forEach(function(ele) {
   allArticles.push(new Article(ele));
 });
+// REMOVE
+/* eslint-enable */
 
 allArticles.forEach(function(a){
   $('#articles').append(a.toHtml());
