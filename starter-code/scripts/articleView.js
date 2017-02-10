@@ -88,3 +88,5 @@ articleView.populateFilters();
 articleView.handleAuthorFilter();
 articleView.handleCategoryFilter();
 articleView.handleMainNav();
+// TODO: Invoke this method when it has been completed above
+// articleView.setTeasers();
