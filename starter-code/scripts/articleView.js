@@ -79,6 +79,7 @@ articleView.setTeasers = function() {
     2. Reveal everything in that particular article now.
     3. Hide that read-on link!
     */
+    // FIXME: Incorrectly hiding first 2 elements when toggling. Need to exclude them from the toggle - see line 86
   $('article').on('click', '.read-on', function(event) {
     event.preventDefault();
     console.log($(this).offset().top);
@@ -96,10 +97,10 @@ articleView.setTeasers = function() {
     // STRETCH GOAl!: change the 'Read On' link to 'Show Less'
 };
 
-// TODO: Invoke all of the above functions (I mean, methods!):
+// DONE: Invoke all of the above functions (I mean, methods!):
 articleView.populateFilters();
 articleView.handleAuthorFilter();
 articleView.handleCategoryFilter();
 articleView.handleMainNav();
-// TODO: Invoke this method when it has been completed above
+// DONE: Invoke this method when it has been completed above
 articleView.setTeasers();
