@@ -94,7 +94,7 @@ articleView.setTeasers = function() {
       $(this).text('Read on →');
     }
   })
-    // STRETCH GOAl!: change the 'Read On' link to 'Show Less'
+    // DONE: STRETCH GOAL!: change the 'Read On' link to 'Show Less'
 };
 
 // DONE: Invoke all of the above functions (I mean, methods!):
